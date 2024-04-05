@@ -1,12 +1,13 @@
-import os
 import json
+import os
+
 import requests
 from flask import Flask, render_template, request, json
+from vendors import add_vendor
 
 app = Flask(__name__)
 app.config['RECAPTCHA_SITE_KEY'] = os.environ.get('RECAPTCHA_SITE_KEY')
 app.config['RECAPTCHA_SECRET_KEY'] = os.environ.get('RECAPTCHA_SECRET_KEY')
-
 
 @app.route('/')
 def index():  # put application's code here
@@ -28,13 +29,20 @@ def gfg():
         google_response = json.loads(r.text)
         if google_response['success']:
             if google_response['score'] >= 0.7:
-                return json.dumps({'success': False, 'error': 'Good Captcha | Score:' + str(google_response['score'])}), 200, {'ContentType': 'application/json'}
+                result = add_vendor(request.form['name'], request.form['email'], (request.form['phone'].split(' '))[-1], request.form['company'], request.form['address'], request.form['city'], request.form['pincode'], request.form['staff'], request.form['password'])
+                if result['success']:
+                    return json.dumps({'success': True}), 200, {'ContentType': 'application/json'}
+                else:
+                    return json.dumps(
+                        {'success': False, 'error': str(result['error'])}), 200, {
+                        'ContentType': 'application/json'}
             else:
                 return json.dumps({'success': False, 'error': 'Bad Captcha | Score:' + str(google_response['score'])}), 200, {'ContentType': 'application/json'}
         else:
-            # FAILED
-            print('FAILED')
-#    return json.dumps({'success':True}), 200, {'ContentType':'application/json'}
+            return json.dumps({'success': False, 'error': 'Bad Captcha | Score:' + str(google_response['score'])}), 200, {'ContentType': 'application/json'}
+    else:
+        return json.dumps({'success': False, 'error': 'Unknown Error Occured'}), 200, {
+            'ContentType': 'application/json'}
 
 
 # app name
