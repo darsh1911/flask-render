@@ -1,7 +1,7 @@
 import os
 
 import mysql.connector
-from flask import app, g
+from flask import g
 
 
 def getdb():
@@ -20,6 +20,3 @@ def close_db(e=None):
 
     if db is not None and db.is_connected():
         db.close()
-
-
-#app.teardown_appcontext(close_db)
