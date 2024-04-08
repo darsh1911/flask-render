@@ -1,10 +1,9 @@
-import mysql.connector
 import db
 
 
 def add_vendor(name, email, phone, company, address, city, pincode, employee_count, password):
     connection = db.getdb()
-    cursor = connection.cursor(dictionary=True)
+    cursor = connection.cursor()
 
 
     user_query = "INSERT INTO users (name, email, phone, password) VALUES (%s, %s, %s, %s)"
@@ -25,10 +24,10 @@ def add_vendor(name, email, phone, company, address, city, pincode, employee_cou
 
         return {'success': True, 'error': ''}
 
-    except mysql.connector.Error as e:
-        if e.errno == 1062:
+    except connection.Error as e:
+        print(e)
+        if e.args[0] == 1062:
             msg = "An account already exists with this email/phone number."
         else:
             msg = e.msg
         return {'success': False, 'error': msg}
-

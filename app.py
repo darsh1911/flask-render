@@ -27,6 +27,8 @@ def gfg():
                           data={'secret': app.config['RECAPTCHA_SECRET_KEY'],
                                 'response': request.form['recaptchaResponse']})
         google_response = json.loads(r.text)
+        #print(json.loads(r.text))
+        #return json.dumps({'success': False}), 200, {'ContentType': 'application/json'}
         if google_response['success']:
             if google_response['score'] >= 0.7:
                 result = add_vendor(request.form['name'], request.form['email'], (request.form['phone'].split(' '))[-1], request.form['company'], request.form['address'], request.form['city'], request.form['pincode'], request.form['staff'], request.form['password'])
