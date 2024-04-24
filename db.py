@@ -10,10 +10,3 @@ def getdb():
         database=os.environ.get('DB_DATABASE'),
     )
     return connection
-
-
-def close_db(e=None):
-    db = g.pop('db', None)
-
-    if db is not None and db.is_connected():
-        db.close()
