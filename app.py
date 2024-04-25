@@ -84,7 +84,7 @@ def partner_login_submit():
                     'ContentType': 'application/json'}
         else:
             return json.dumps(
-                {'success': False, 'error': 'Bad Captcha'}), 200, {
+                {'success': False, 'error': 'Bad Captcha' + str(google_response)}), 200, {
                 'ContentType': 'application/json'}
     else:
         return json.dumps({'success': False, 'error': 'Unknown Error Occured'}), 200, {
@@ -123,7 +123,7 @@ def subscribe():
                     'ContentType': 'application/json'}
         else:
             return json.dumps(
-                {'success': False, 'error': 'Bad Captcha'}), 200, {
+                {'success': False, 'error': 'Bad Captcha' + str(google_response)}), 200, {
                 'ContentType': 'application/json'}
     else:
         return json.dumps({'success': False, 'error': 'Unknown Error Occured'}), 200, {
