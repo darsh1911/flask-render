@@ -1296,10 +1296,3 @@
         width: 320px;
     }
 }
-
-@font-face {
-    font-family: 'Adam-Bold';
-    font-style: normal;
-    font-weight: 400;
-    src: url(../fonts/Adam-Bold.ttf);
-}
