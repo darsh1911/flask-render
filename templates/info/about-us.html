@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html style="font-size: 18px;" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Company Overview​, Our Team, ​Looking For Roadside Assistance? Just Call Us!">
+    <meta name="description" content="">
+    <title>About Us</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nicepage.css') }}" media="screen">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about-us.css') }}" media="screen">
+    <script class="u-script" type="text/javascript" src="{{ url_for('static', filename='js/jquery.js') }}"
+            defer=""></script>
+    <script class="u-script" type="text/javascript" src="{{ url_for('static', filename='js/nicepage.js') }}"
+            defer=""></script>
+    <meta name="generator" content="Nicepage 6.12.10, nicepage.com">
+    <meta name="referrer" content="origin">
+
+    <script type="application/ld+json">{
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "bm-partner",
+        "sameAs": [
+            "tel:+919825711438",
+            "mailto:queries@bharatmechanic.com",
+            "https://www.facebook.com/bharatmechanic",
+            "https://instagram.com/bharat_mechanic_official"
+        ]
+    }</script>
+    <meta name="theme-color" content="#fd683d">
+    <meta property="og:title" content="About Us">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <script>
+        function gdprConfirmed() {
+            return true;
+        }
+
+        function dynamicLoadScript(src) {
+            let script = document.createElement('script');
+            script.src = src && typeof src === 'string' ? src : 'https://www.google.com/recaptcha/api.js?render=6LcyZqgpAAAAAP1zKxx42FZUjp_2caw_NeQIc1j0';
+            script.async = true;
+            document.body.appendChild(script);
+            script.onload = function () {
+                let event = new CustomEvent("recaptchaLoaded");
+                document.dispatchEvent(event);
+            };
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            let confirmButton = document.querySelector('.u-cookies-consent .u-button-confirm');
+            if (confirmButton) {
+                confirmButton.onclick = dynamicLoadScript;
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            if (!gdprConfirmed()) {
+                return;
+            }
+            dynamicLoadScript();
+        });
+    </script>
+    <script>
+        document.addEventListener("recaptchaLoaded", function () {
+            if (!gdprConfirmed()) {
+                return;
+            }
+            (function (grecaptcha, sitekey, actions) {
+                let recaptcha = {
+                    execute: function (action, submitFormCb) {
+                        try {
+                            grecaptcha.execute(
+                                sitekey,
+                                {action: action}
+                            ).then(function (token) {
+                                let forms = document.getElementsByTagName('form');
+
+                                for (let i = 0; i < forms.length; i++) {
+                                    let fields = forms[i].getElementsByTagName('input');
+
+                                    for (let j = 0; j < fields.length; j++) {
+                                        let field = fields[j];
+
+                                        if ('recaptchaResponse' === field.getAttribute('name')) {
+                                            field.setAttribute('value', token);
+                                            break;
+                                        }
+                                    }
+                                }
+                                submitFormCb();
+                            });
+                        } catch (e) {
+                            let formError = document.querySelector('.u-form-send-error');
+
+                            if (formError) {
+                                formError.innerText = 'Site Owner Error: ' + e.message.replace(/:[\s\S]*/, '');
+                                formError.style.display = 'block';
+                            }
+                        }
+                    },
+
+                    executeContact: function (submitFormCb) {
+                        recaptcha.execute(actions['contact'], submitFormCb);
+                    }
+                };
+
+                window.recaptchaObject = recaptcha;
+            })(
+                grecaptcha,
+                '6LcyZqgpAAAAAP1zKxx42FZUjp_2caw_NeQIc1j0',
+                {'contact': 'contact'}
+            );
+        });
+    </script>
+    <meta data-intl-tel-input-cdn-path="{{ url_for('static', filename='intlTelInput/') }}">
+</head>
+<body data-path-to-root="/" data-include-products="false" class="u-body u-xl-mode" data-lang="en">
+{% include 'headers/header-landing.html' %}
+<section class="u-clearfix u-section-1" id="sec-aedd">
+    <div class="u-clearfix u-sheet u-sheet-1">
+        <img alt="" class="u-expanded-width-sm u-expanded-width-xs u-image u-image-default u-image-1"
+             data-image-width="250" data-image-height="167" src="{{ url_for('static', filename='/images/16.webp') }}">
+        <div class="u-container-align-left-lg u-container-align-left-xl u-container-style u-expanded-width-sm u-expanded-width-xs u-group u-palette-2-light-3 u-group-1">
+            <div class="u-container-layout u-valign-bottom u-container-layout-1">
+                <h3 class="u-align-left u-text u-text-default u-text-1"> About Us</h3>
+                <p class="u-align-left u-text u-text-default u-text-2"> Bharat Mechanic is a trusted brand under Five
+                    Tyres Automotive Services Private Limited, dedicated to providing reliable and efficient automotive
+                    solutions. Established in 2024, Bharat Mechanic is committed to revolutionising the way people
+                    access roadside assistance services in India.</p>
+                <a href=""
+                   class="u-align-center-md u-align-center-sm u-align-center-xs u-align-left-lg u-align-left-xl u-btn u-button-style u-btn-1">Get
+                    Assistance </a>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="u-align-center u-clearfix u-container-align-left u-palette-2-light-3 u-section-2" id="sec-7c83">
+    <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <h5 class="u-align-left u-text u-text-default u-text-1">What we do</h5>
+        <h2 class="u-align-left u-text u-text-default u-text-2">Company Overview </h2>
+        <p class="u-align-left u-text u-text-default u-text-3"> Bharat Mechanic is a brand under Five Tyres Automotive
+            Services Private Limited, a leading provider of roadside assistance services based in Surat, Gujarat. Our
+            mission is to provide timely and professional assistance to vehicle owners in need, ensuring their safety
+            and peace of mind on the road.</p>
+    </div>
+</section>
+<section class="u-align-center u-clearfix u-container-align-center u-section-3" id="sec-d583">
+    <div class="u-clearfix u-sheet u-sheet-1">
+        <h2 class="u-align-center u-text u-text-default u-text-1">Our Team</h2>
+        <p class="u-align-center u-text u-text-default u-text-2"> At Bharat Mechanic, we have a dynamic and experienced
+            founding team driving our vision forward:</p>
+        <div class="u-expanded-width u-list u-list-1">
+            <div class="u-repeater u-repeater-1">
+                <div class="u-align-center u-container-align-center u-container-style u-list-item u-repeater-item u-white u-list-item-1"
+                     data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="750">
+                    <div class="u-container-layout u-similar-container u-container-layout-1">
+                        <div class="u-image u-image-circle u-image-1" data-image-width="600"
+                             data-image-height="600"></div>
+                        <h3 class="u-align-center u-text u-text-3"> Darshan Bhansali</h3>
+                        <p class="u-align-center u-text u-text-palette-2-base u-text-4">Techie</p>
+                    </div>
+                </div>
+                <div class="u-align-center u-container-align-center u-container-style u-list-item u-repeater-item u-white u-list-item-2"
+                     data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="750">
+                    <div class="u-container-layout u-similar-container u-container-layout-2">
+                        <div class="u-image u-image-circle u-image-2" data-image-width="600"
+                             data-image-height="600"></div>
+                        <h3 class="u-align-center u-text u-text-5">Piyush Trivedi</h3>
+                        <p class="u-align-center u-text u-text-palette-2-base u-text-6"> Operations Guru</p>
+                    </div>
+                </div>
+                <div class="u-align-center u-container-align-center u-container-style u-list-item u-repeater-item u-white u-list-item-3"
+                     data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="750">
+                    <div class="u-container-layout u-similar-container u-container-layout-3">
+                        <div class="u-image u-image-circle u-image-3" data-image-width="600"
+                             data-image-height="600"></div>
+                        <h3 class="u-align-center u-text u-text-7"> Sourabh Pareek</h3>
+                        <p class="u-align-center u-text u-text-palette-2-base u-text-8"> Automotive Expert</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="u-align-center u-text u-text-default u-text-9" style="margin-bottom: 60px !important;"> Together, our
+            founders bring a wealth of expertise in the automotive industry, technology, and business management,
+            enabling us to deliver innovative solutions and exceptional service to our customers.<br>
+        </p>
+    </div>
+</section>
+<section class="u-clearfix u-palette-2-light-3 u-section-4" id="sec-80fc">
+    <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-xl u-sheet-1">
+        <div class="data-layout-selected u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+            <div class="u-layout">
+                <div class="u-layout-row">
+                    <div class="u-container-style u-layout-cell u-size-9 u-layout-cell-1">
+                        <div class="u-container-layout u-container-layout-1"><span
+                                class="u-align-center u-border-2 u-border-palette-2-base u-file-icon u-icon u-icon-circle u-text-palette-2-base u-icon-1"><img
+                                src="{{ url_for('static', filename='/images/1967852-4a6dca16.png') }}" alt=""></span>
+                        </div>
+                    </div>
+                    <div class="u-container-style u-layout-cell u-size-36 u-layout-cell-2">
+                        <div class="u-container-layout u-container-layout-2">
+                            <h2 class="u-text u-text-default u-text-1"> Looking For Roadside Assistance? Just Call
+                                Us!</h2>
+                            <p class="u-text u-text-default u-text-2"> Create a free account to avail roadside
+                                assistance in a matter of minutes.</p>
+                        </div>
+                    </div>
+                    <div class="u-container-style u-layout-cell u-size-15 u-layout-cell-3">
+                        <div class="u-container-layout u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-container-layout-3">
+                            <a href="#" class="u-align-center u-btn u-button-style u-btn-1"> Find a mechanic</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="u-clearfix u-section-5" id="sec-9951">
+    <div class="u-clearfix u-sheet u-sheet-1">
+        <h2 class="u-align-center u-text u-text-default u-text-1">India's Premier Roadside Assistance Provider</h2>
+        <div class="data-layout-selected u-clearfix u-expanded-width u-gutter-0 u-layout-wrap u-layout-wrap-1">
+            <div class="u-layout">
+                <div class="u-layout-col">
+                    <div class="u-size-30">
+                        <div class="u-layout-row">
+                            <div class="u-container-style u-image u-layout-cell u-left-cell u-size-15 u-image-1"
+                                 data-image-width="150" data-image-height="100">
+                                <div class="u-container-layout u-valign-middle u-container-layout-1"></div>
+                            </div>
+                            <div class="u-align-left u-container-align-left u-container-style u-layout-cell u-size-15 u-white u-layout-cell-2">
+                                <div class="u-container-layout u-valign-middle u-container-layout-2"><span
+                                        class="u-file-icon u-icon u-icon-1"><img
+                                        src="{{ url_for('static', filename='images/10590584.png') }}" alt=""></span>
+                                    <h3 class="u-text u-text-2">Puncture Repair</h3>
+                                    <p class="u-large-text u-text u-text-variant u-text-3">Starts at <span
+                                            style="font-weight: 700;" class="u-text-palette-1-base">₹149</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="u-container-style u-image u-layout-cell u-size-15 u-image-2"
+                                 data-image-width="150" data-image-height="113">
+                                <div class="u-container-layout u-valign-middle u-container-layout-3"></div>
+                            </div>
+                            <div class="u-align-left u-container-align-left u-container-style u-layout-cell u-right-cell u-size-15 u-white u-layout-cell-4">
+                                <div class="u-container-layout u-valign-middle u-container-layout-4"><span
+                                        class="u-file-icon u-icon u-icon-2"><img
+                                        src="{{ url_for('static', filename='images/10755102.png') }}" alt=""></span>
+                                    <h3 class="u-text u-text-4">Step-knee Change</h3>
+                                    <p class="u-large-text u-text u-text-variant u-text-5">Starts at <span
+                                            style="font-weight: 700;" class="u-text-palette-1-base">₹199</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="u-size-30">
+                        <div class="u-layout-row">
+                            <div class="u-align-left u-container-align-left u-container-style u-layout-cell u-left-cell u-size-15 u-white u-layout-cell-5">
+                                <div class="u-container-layout u-valign-middle u-container-layout-5"><span
+                                        class="u-file-icon u-icon u-icon-3"><img
+                                        src="{{ url_for('static', filename='images/3713201.png') }}" alt=""></span>
+                                    <h3 class="u-text u-text-6">Battery Jumpstart</h3>
+                                    <p class="u-large-text u-text u-text-variant u-text-7">Starts at <span
+                                            style="font-weight: 700;" class="u-text-palette-1-base">₹299</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="u-container-style u-image u-layout-cell u-size-15 u-image-3"
+                                 data-image-width="1280" data-image-height="960">
+                                <div class="u-container-layout u-valign-middle u-container-layout-6"></div>
+                            </div>
+                            <div class="u-align-left u-container-align-left u-container-style u-layout-cell u-size-15 u-white u-layout-cell-7">
+                                <div class="u-container-layout u-valign-middle u-container-layout-7"><span
+                                        class="u-file-icon u-flip-horizontal u-icon u-icon-4"><img
+                                        src="{{ url_for('static', filename='images/1367365.png') }}" alt=""></span>
+                                    <h3 class="u-text u-text-8">Towing Assistance</h3>
+                                    <p class="u-large-text u-text u-text-variant u-text-9">Starts at <span
+                                            style="font-weight: 700;" class="u-text-palette-1-base">₹1499</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="u-container-style u-image u-layout-cell u-right-cell u-size-15 u-image-4"
+                                 data-image-width="1000" data-image-height="624">
+                                <div class="u-container-layout u-container-layout-8"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="u-clearfix u-palette-2-light-3 u-section-6" id="sec-f7ed">
+    <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="data-layout-selected u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+            <div class="u-layout">
+                <div class="u-layout-row">
+                    <div class="u-align-left u-container-style u-layout-cell u-shape-rectangle u-size-38 u-layout-cell-1">
+                        <div class="u-container-layout u-valign-middle u-container-layout-1">
+                            <h3 class="u-text u-text-default u-text-1">Sign-up with us to boost your garage
+                                business.</h3>
+                            <p class="u-text u-text-2">Share your name and email in the form below to have our team
+                                reach out to you.</p>
+                            <div class="u-expanded-width u-form u-form-1">
+                                {% include 'vendor-sub-form.html' %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="u-align-center u-container-style u-hidden-xs u-layout-cell u-palette-2-base u-shape-rectangle u-size-22 u-layout-cell-2">
+                        <div class="u-container-layout u-container-layout-2">
+                            <h5 class="u-text u-text-3">Businesses registered with us see a significant boost in the
+                                number of vehicles they service every day.</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% include 'footer.html' %}
+</body>
+</html>

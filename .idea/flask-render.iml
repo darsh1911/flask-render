@@ -19,6 +19,9 @@
       <list>
         <option value="$MODULE_DIR$/templates" />
         <option value="$MODULE_DIR$/templates/partner" />
+        <option value="$MODULE_DIR$/templates/app" />
+        <option value="$MODULE_DIR$/templates/info" />
+        <option value="$MODULE_DIR$/templates/headers" />
       </list>
     </option>
   </component>

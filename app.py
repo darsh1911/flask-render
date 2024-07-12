@@ -3,6 +3,15 @@ import json
 import requests
 
 from flask import Flask, render_template, request, json, session
+from flask_login import (
+    LoginManager,
+    current_user,
+    login_required,
+    login_user,
+    logout_user,
+)
+
+from oauthlib.oauth2 import WebApplicationClient
 
 import vendors
 import leads
@@ -26,7 +35,7 @@ def index():  # put application's code here
 @app.route('/partners/register')
 def partner_register():  # put application's code here
     # print(app.config['RECAPTCHA_SECRET_KEY'])
-    return render_template('/partner/partner-registration.html')
+    return render_template('coming-soon.html')
 
 
 @app.route('/partners/register/callback', methods=["POST"])
@@ -104,13 +113,15 @@ def services():
 @app.route('/subscribe', methods=["POST"])
 def subscribe():
     if request.method == "POST":
+        name = request.form['name'] if "name" in request.form.keys() else "NA"
+        phone = (str.split(request.form['phone'], ' '))[-2] + (str.split(request.form['phone'], ' '))[-1]
         r = requests.post('https://www.google.com/recaptcha/api/siteverify',
                           data={'secret': app.config['RECAPTCHA_SECRET_KEY'],
                                 'response': request.form['recaptchaResponse']})
         google_response = json.loads(r.text)
         if google_response['success']:
             if google_response['score'] >= 0.7:
-                result = leads.new_lead(email=request.form['email'])
+                result = leads.new_lead(name, phone)
                 if result['success'] is True:
                     return json.dumps({'success': True, 'error': 'Subscribed successfully.'}), 200, {
                         "ContentType": 'application/json'}
@@ -129,6 +140,84 @@ def subscribe():
         return json.dumps({'success': False, 'error': 'Unknown Error Occured'}), 200, {
             'ContentType': 'application/json'}
 
+
+@app.route('/assist', methods=["GET"])
+def assist():
+    return render_template('coming-soon.html')
+
+
+@app.route('/user/onboarding', methods=["POST"])
+def user_onboarding():
+    if request.method == "POST":
+        r = requests.post('https://www.google.com/recaptcha/api/siteverify',
+                          data={'secret': app.config['RECAPTCHA_SECRET_KEY'],
+                                'response': request.form['recaptchaResponse']})
+        google_response = json.loads(r.text)
+        if google_response['success']:
+            if google_response['score'] >= 0.7:
+                result = leads.new_lead(phone=request.form['email'])
+                if result['success'] is True:
+                    return json.dumps({'success': True, 'error': 'Subscribed successfully.'}), 200, {
+                        "ContentType": 'application/json'}
+                else:
+                    return json.dumps({'success': False, 'error': str(result['error'])}), 200, {
+                        'ContentType': 'application/json'}
+            else:
+                return json.dumps(
+                    {'success': False, 'error': 'Bad Captcha | Score:' + str(google_response['score'])}), 200, {
+                    'ContentType': 'application/json'}
+        else:
+            return json.dumps(
+                {'success': False, 'error': 'Bad Captcha' + str(google_response)}), 200, {
+                'ContentType': 'application/json'}
+    else:
+        return json.dumps({'success': False, 'error': 'Unknown Error Occured'}), 200, {
+            'ContentType': 'application/json'}
+
+
+@app.route('/user/signin', methods=["POST"])
+def user_signin():
+    if request.method == "POST":
+        r = requests.post('https://www.google.com/recaptcha/api/siteverify',
+                          data={'secret': app.config['RECAPTCHA_SECRET_KEY'],
+                                'response': request.form['recaptchaResponse']})
+        google_response = json.loads(r.text)
+        if google_response['success']:
+            if google_response['score'] >= 0.7:
+                result = leads.new_lead(phone=request.form['email'])
+                if result['success'] is True:
+                    return json.dumps({'success': True, 'error': 'Subscribed successfully.'}), 200, {
+                        "ContentType": 'application/json'}
+                else:
+                    return json.dumps({'success': False, 'error': str(result['error'])}), 200, {
+                        'ContentType': 'application/json'}
+            else:
+                return json.dumps(
+                    {'success': False, 'error': 'Bad Captcha | Score:' + str(google_response['score'])}), 200, {
+                    'ContentType': 'application/json'}
+        else:
+            return json.dumps(
+                {'success': False, 'error': 'Bad Captcha' + str(google_response)}), 200, {
+                'ContentType': 'application/json'}
+    else:
+        return json.dumps({'success': False, 'error': 'Unknown Error Occured'}), 200, {
+            'ContentType': 'application/json'}
+
+@app.route('/about_us', methods=['GET'])
+def about_us():
+    return render_template('/info/about-us.html')
+
+@app.route('/terms_and_conditions', methods=['GET'])
+def terms_and_conditions():
+    return render_template('/info/terms-and-conditions.html')
+
+@app.route('/privacy_policy', methods=['GET'])
+def privacy_policy():
+    return render_template('/info/privacy-policy.html')
+
+@app.route('/cancellation_and_refund', methods=['GET'])
+def cancellation_and_refund():
+    return render_template('/info/cancellation-and-refund-policy.html')
 
 # app name
 @app.errorhandler(404)

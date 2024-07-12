@@ -1,0 +1,54 @@
+.u-section-1 .u-sheet-1 {
+  min-height: 550px;
+}
+
+.u-section-1 .u-form-1 {
+  width: 570px;
+  --thumb-color: #fd683d;
+  --thumb-hover-color: #fe9577;
+  --track-color: #c0c0c0;
+  --track-active-color: #fd683d;
+  margin: 120px auto;
+}
+
+.u-section-1 .u-form-group-1 {
+  margin-left: 0;
+}
+
+.u-section-1 .u-input-1 {
+  letter-spacing: 0px;
+}
+
+.u-section-1 .u-btn-1 {
+  width: 100%;
+  padding: 10px 0;
+}
+
+@media (max-width: 1199px) {
+  .u-section-1 .u-form-group-1 {
+    --progress: 0%;
+  }
+
+  .u-section-1 .u-input-1 {
+    --radius: 15px;
+  }
+}
+
+@media (max-width: 767px) {
+  .u-section-1 .u-form-1 {
+    width: 540px;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-section-1 .u-form-1 {
+    width: 340px;
+    margin-top: 60px;
+    margin-bottom: 0;
+  }
+}@font-face {
+  font-family: 'Adam-Bold';
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/Adam-Bold.ttf);
+}
