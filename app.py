@@ -27,6 +27,7 @@ app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = 'filesystem'
 Session(app)
 
+
 @app.route('/')
 def index():  # put application's code here
     return render_template('index.html')
@@ -203,21 +204,26 @@ def user_signin():
         return json.dumps({'success': False, 'error': 'Unknown Error Occured'}), 200, {
             'ContentType': 'application/json'}
 
+
 @app.route('/about_us', methods=['GET'])
 def about_us():
     return render_template('/info/about-us.html')
+
 
 @app.route('/terms_and_conditions', methods=['GET'])
 def terms_and_conditions():
     return render_template('/info/terms-and-conditions.html')
 
+
 @app.route('/privacy_policy', methods=['GET'])
 def privacy_policy():
     return render_template('/info/privacy-policy.html')
 
+
 @app.route('/cancellation_and_refund', methods=['GET'])
 def cancellation_and_refund():
     return render_template('/info/cancellation-and-refund-policy.html')
+
 
 # app name
 @app.errorhandler(404)
